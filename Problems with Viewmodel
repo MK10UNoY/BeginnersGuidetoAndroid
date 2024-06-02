@@ -1,1 +1,10 @@
+When I created a simple counter app as a part of learning Viewmodel when I tried to implement the viewModel class after following a tutorial
+I had come to a realization that my project for some reason was not able to automatically import the required dependency in Android Studio.\
 
+Even after manually typing the "import androidx.lifecycle.ViewModel.compose.viewModel"
+
+the androidx.lifecycle.ViewModel did not indeed contain the compose section entirely. The Root cause was found to be outdated files and missing implementation
+in the buildgradle.kts file where I added the line " implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1") "  After a gradle sync to implement
+the new dependency. The IDLE finally recognized the " compose.viewModel " part of the "androidx.lifecycle.ViewModel" dependency.
+
+Now, that the viewmodel is implemented the final Counter app can mantain it's data even when the app changes orientation without reseting.
